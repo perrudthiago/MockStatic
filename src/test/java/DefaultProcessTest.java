@@ -43,8 +43,9 @@ public class DefaultProcessTest {
 
             result = process.Process();
 
-            //staticSingleton.verify(ServiceLocator::getInstance);
-            //verify(serviceLocatorMock).lookup();
+            // Validar se de fato o Mock foi chamado
+            staticSingleton.verify(ServiceLocator::getInstance);
+            verify(serviceLocatorMock).lookup();
         }
         TestCase.assertEquals("Mock Result", "Mock Class", result);
     }
